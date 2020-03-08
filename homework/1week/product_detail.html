@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>상품 상세 페이지</title>
+
+     <!-- Bootstrap CSS -->
+     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+     <link href="https://fonts.googleapis.com/css?family=Do+Hyeon&display=swap" rel="stylesheet">
+     <link rel="stylesheet" href="product_detail.css"/>
+     <!-- JS -->
+     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+</head>
+<body>
+
+<div class="container">
+    <div class="row">
+        <div class="col-5 thumb">
+            <img src="https://image.msscdn.net/images/goods_img/20200303/1331467/1331467_1_500.jpg" alt="A.P.C Josh Coin Purse">
+        </div>
+        <div class="col-7 product-info">
+            <div class="info">
+                <h2>Product info</h2>
+                <h1>Josh Coin Purse / <span class="brand-name">A.P.C</span></h1>
+                <p class="info">몰드를 사용하여 단단하고 모서리를 굴려 깔끔하게 shape이 잡혀있는 
+                    부드러운 소가죽 소재의 멀티 수납형 지갑. 위는 동전 및 카드, 
+                    아래에는 5개의 카드를 수납할 수 있는 공간으로 이루어짐.
+                </p>
+            </div>
+
+            <div class="price">
+                <h2>Product price</h2>
+                <p class="origin-price">329,500 원</p>
+                <p class="sale-price">320,000 원</p>
+            </div>
+
+            <hr class="my-4">
+
+            <div class="input-wrap">
+                <div class="row">
+                    <div class="col">
+                        <div class="input-group mb-3">
+                            <select class="custom-select" id="inputGroupSelect01">
+                              <option selected>옵션 선택</option>
+                              <option value="product1">39(NAVY)</option>
+                              <option value="product2">88(BROWN)</option>
+                              <option value="product3">98(BLACK)</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="input-group mb-3">
+                            <select class="custom-select" id="inputGroupSelect02">
+                              <option selected>수량 선택</option>
+                              <option value="1">1</option>
+                              <option value="2">2</option>
+                              <option value="3">3</option>
+                              <option value="4">4</option>
+                              <option value="5">5</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+            </div><!--END : input-wrap-->
+
+        </div>
+    </div>
+</div>
+
+</body>
+</html>
