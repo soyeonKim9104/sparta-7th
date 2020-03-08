@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>로그인페이지</title>
+    <style>
+			/* 태그명을 바로 가리킬 때 */
+	    body {
+	    	background-color: black;
+	    	color: white;
+	    }
+        div{
+            background-color:green;
+        }
+
+
+        /*div 직전 자식인 input에 영향을 미침*/
+        div > input{
+            color: red;
+        }
+
+        /* class를 만들어 가리킬 때 */
+	    .mytitle {
+	    	color: yellow;
+            margin-top:20px;
+            margin-bottom: 20px;
+            margin-left: 20px;
+            margin-right: 20px;
+            /*margin/padding : top right bottom left;*/
+            /*margin/padding : 위/아래 좌/우*/
+	    }
+   	</style>
+</head>
+<body>
+    <h1 class="mytitle">
+    	로그인 페이지
+  	</h1>
+    <div class="mytitle">
+    	ID: 
+    	<input type="text">
+    	PW: 
+    	<input type="password">   
+   	</div>
+   	<button>로그인하기</button>
+</body>
+</html>
