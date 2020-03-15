@@ -1,0 +1,168 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+
+    <!-- Webpage Title -->
+    <title>Hello, world!</title>
+
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    <!-- JS -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
+
+    <!-- 구글폰트 -->
+    <link href="https://fonts.googleapis.com/css?family=Stylish&display=swap" rel="stylesheet">
+
+    <!-- style -->
+    <style type="text/css">
+        * {
+            font-family: 'Stylish', sans-serif;
+        }
+
+        .wrap {
+            width: 900px;
+            margin: auto;
+        }
+
+        .comment {
+            color: blue;
+            font-weight: bold;
+        }
+
+        .form-post {
+            max-width: 500px;
+            padding: 2rem;
+            margin: 2rem auto;
+            border-color: #e9ecef;
+            border-radius: 0.3rem;
+            border: solid;
+            display: none;
+        }
+    </style>
+
+    <script>
+        /*
+        // 나
+        let num = 1;
+        function hey(){
+           //alert(num++);
+            alert(num);
+            //num = num + 1;
+            num += 1
+        }
+
+        //다음에서 '딸기'는 몇 개일까? - 이번엔 자바스크립트 콘솔창에서!
+        let a = ['사과','감','감','배','포도','포도','딸기','포도','감','수박','딸기']
+        a.filter((i) => i==='딸기').length;
+
+
+        //0부터 n-1까지 더하는 함수를 만들고 싶다면?
+        function tt(n){
+            result = 0;
+            for(let i = 0; i < n; i++){
+                result = result + i;
+            }
+            return result
+        }
+
+        //위의 함수를 한줄로 줄인다면....
+        function tt(n){
+            return [...Array(n).keys()].reduce((acc,cur)) => acc + cur; // acc = 원소값 cur = 누적 값 , reduce 함수 : 누적함수
+        }
+        */
+
+        //input 박스의 값을 가져와보기
+        function getArticles(){
+            //let value = $('#input_article').val();
+            //let value2 = $('#input_comment').val();
+            //alert(value);
+            //console.log(value2);
+            
+            //$('#input_article').val('naver.com');
+
+
+            /* 응용 - 클릭시, input 적어놓은 값을 콘솔로 불러올 수 있고, 초기화 할 수 도있다.
+            let value = $('#input_article').val();
+            console.log(value);
+            $('#input_article').val(''); // input값 초기화(=빈값)
+            */
+        }
+
+
+        //div 보이기 / 숨기기
+        //$('#post-box').hide();
+        function toggleBox(){
+            let box =  $('#post-box');
+           // $('#post-box').toggle();
+           if(box.is(':visible') === true){
+                box.hide();
+                $('#post_button').text("포스팅박스 열기");
+                console.log(box.css('display'));
+           }else{
+                box.show();
+                $('#post_button').text("포스팅박스 닫기");
+                console.log(box.css('display'));
+           }
+        }
+        
+        function addArticle(){
+            let title = $('#input_article').val();
+            let comment = $('#input_comment').val();
+
+            let article_html = `<div class="card">\
+                <img class="card-img-top" src="https://www.fodors.com/wp-content/uploads/2018/10/4_UltimateRome_PiazzaNavona-975x650.jpg" alt="Card image cap">\
+                <div class="card-body">\
+                    <h5 class="card-title">${title}</h5>\
+                    <p class="card-text comment">${comment}</p>\
+                </div>`;
+                $('#cards-box').append(article_html);
+            //console.log(title, comment);
+        }
+
+    </script>
+
+</head>
+
+<body>
+    <div class="wrap">
+        <div class="jumbotron">
+            <h1 class="display-4">나홀로 링크 메모장!</h1>
+            <p class="lead">중요한 링크를 저장해두고, 나중에 볼 수 있는 공간입니다</p>
+            <hr class="my-4">
+            <p class="lead">
+                <a id="post_button" class="btn btn-primary btn-lg" href="#" role="button" onclick="toggleBox()">포스팅박스 열기</a>
+            </p>
+        </div>
+        <div class="form-post" id="post-box">
+            <div>
+                <div class="form-group">
+                    <label for="exampleFormControlInput1">아티클 URL</label>
+                    <input id="input_article" class="form-control" placeholder="">
+                </div>
+                <div class="form-group">
+                    <label for="exampleFormControlTextarea1">간단 코멘트</label>
+                    <textarea id="input_comment" class="form-control" rows="2"></textarea>
+                </div>
+                <button onclick="addArticle()" type="button" class="btn btn-primary">기사저장</button>
+            </div>
+        </div>
+        <div class="card-columns" id="cards-box">
+
+        </div>
+    </div>
+</body>
+
+</html>
