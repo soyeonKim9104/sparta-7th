@@ -67,12 +67,115 @@
             </div><!--END : input-wrap-->
 
             <div class="button-wrap">
-                <button type="button" class="btn btn-dark btn-lg float-right">구매하기</button>
+                <button onclick="purchase_toggle()" id="purchase" class="btn btn-dark btn-lg float-right" type="button">구매하기</button>
             </div>
-
         </div>
+
+        <!--주문서 오픈-->
+        <div id="purchase_box">
+            <div class="row">
+                <div class="col-12">
+                    <div class="sub_title">주문자 정보</div>
+                    <div class="radio_wrap address">
+                        <div class="custom-control custom-radio custom-control-inline">
+                            <input type="radio" id="customRadioInline1" name="customRadioInline1" class="custom-control-input" checked>
+                            <label class="custom-control-label" for="customRadioInline1">최근 배송지</label>
+                        </div>
+                        <div class="custom-control custom-radio custom-control-inline">
+                            <input type="radio" id="customRadioInline2" name="customRadioInline1" class="custom-control-input">
+                            <label class="custom-control-label" for="customRadioInline2">새로운 배송지</label>
+                        </div>
+                    </div>
+                    <div class="order-form">
+                        <form>
+                            <div class="form-row">
+                                <div class="form-group col-md-6">
+                                    <label for="inputEmail4">수령인</label>
+                                    <input type="email" class="form-control" id="inputEmail4" value="김소연">
+                                </div>
+                                <div class="form-group col-md-6">
+                                    <label for="phone-number">휴대폰 번호</label>
+                                    <input type="number" class="form-control" id="phone-number">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="inputAddress">주소</label>
+                                <input type="text" class="form-control" id="inputAddress" value="서울특별시  서대문구 수색로 100">
+                            </div>
+                            <div class="form-group">
+                                <label for="inputAddress">배송 메모</label>
+                                <textarea class="form-control" id="validationTextarea" placeholder="택배기사님께 전할 말씀을 남겨주세요." required></textarea>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+
+                <div class="col-12">
+                    <div class="sub_title">결제 정보</div>
+                    <div class="radio_wrap pay">
+                        <div class="custom-control custom-radio custom-control-inline">
+                            <input type="radio" id="pay1" name="payment" class="custom-control-input">
+                            <label class="custom-control-label" for="pay1">신용 카드</label>
+                        </div>
+                        <div class="custom-control custom-radio custom-control-inline">
+                            <input type="radio" id="pay2" name="payment" class="custom-control-input">
+                            <label class="custom-control-label" for="pay2">가상 계좌(무통장 입금)</label>
+                        </div>
+                        <div class="custom-control custom-radio custom-control-inline">
+                            <input type="radio" id="pay3" name="payment" class="custom-control-input">
+                            <label class="custom-control-label" for="pay3">카카오페이</label>
+                        </div>
+                    </div>
+
+                    <div class="order-form">
+                        <!--신용카드 선택시-->
+                        <div id="sel-card" class="sel-payment">
+                            <div class="form-group">
+                                <label for="inputState">결제 안내</label>
+                                <select id="inputState" class="form-control">
+                                    <option selected>삼성카드</option>
+                                    <option>국민카드</option>
+                                </select>
+                                <select id="inputState2" class="form-control">
+                                    <option selected>일시불</option>
+                                    <option>1개월</option>
+                                    <option>2개월</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <!--무통장 선택시-->
+                        <div id="sel-cash" class="sel-payment">
+                            <div class="form-group">
+                                <label for="inputState">결제 안내</label>
+                                <select id="inputState3" class="form-control">
+                                    <option selected>기업은행</option>
+                                    <option>씨티은행</option>
+                                </select>
+                                <input type="text" class="form-control" id="inputEmail5" value="김소연" readonly>
+                            </div>
+                        </div>
+
+                        <!--카카오페이 선택시-->
+                        <div id="sel-kakao" class="sel-payment">
+                            <div class="text-box">
+                                <strong>카카오페이 안내</strong>
+                                <p>카카오페이는 카카오톡에서 카드를 등록, 간단하게 비밀번호만으로 결제할 수 있는 빠르고 편리한 모바일 결제 서비스입니다.<br/>
+                                    -지원 카드 : 모든 카드 등록/결제 가능</p>
+                            </div>
+                        </div>
+
+                        <button onclick="success()" type="submit" class="btn btn-dark btn-lg float-right">주문하기</button>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
     </div>
 </div>
+
+<script src="javascript.js"></script>
 
 </body>
 </html>

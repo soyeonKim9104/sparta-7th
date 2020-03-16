@@ -68,3 +68,39 @@ margin: 20px 0;
 overflow: hidden;
 padding: 0 15px;
 }
+
+#purchase_box{
+width:100%;
+display:none;
+}
+
+.sel-payment{
+display:none;
+}
+
+.sel-payment.active{
+display:block;
+}
+
+#purchase_box .sub_title{
+background: #eee;
+padding: 7px 14px;
+font-size: 19px;
+}
+
+#purchase_box .radio_wrap{
+margin-top: 10px;
+}
+
+#purchase_box .order-form{
+margin-top: 20px;
+}
+
+.sel-payment label{
+display: block;
+}
+
+.sel-payment .form-control{
+display: inline-block;
+width:300px;
+}
