@@ -1,0 +1,15 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Hello, world!</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='index.css')}}" />
+    <!--ajax는 제이쿼리를 불러와야 사용할 수 있다.-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="{{url_for('static', filename='index.js')}}"></script>
+    <!--naver.com/static/index.css 라는 의미-->
+</head>
+<body>
+    <h1 onclick="test()">홈페이지롱</h1>
+</body>
+</html>

@@ -1,0 +1,80 @@
+javascript
+-> 웹에서 동적이 행동을 제어해줌
+
+chrome > console -> 자바스크립트 명령어 테스트 해볼 수 있음.
+
+
+[변수 타입]
+let -> 값이 바뀔수 있는 변수 일 때 사용 // 값을 바꾼다는것은 컴퓨터의 메모리를 사용한다는 뜻
+const -> 절대로 안 바뀌는 값을 설정할 떄 사용
+var -> 
+
+ECMScript - 매년 업뎃 되거나 바뀐다.
+ECMScript 2015 - > 이때까지 var를 사용했다
+ECMScript 2016 -> 이떄부터 let, const 를 사용했다.
+
+[자바스크립트 - 사칙연산]
+a**b 는 a의b승을 의미한다
+a%b 는 a를 b로 나눌떄의 나머지
+
+[자바스크립트 - 변수 명]
+변수의 맨 앞자리는 무조건 소문자, 영문이 들어가야 한다.
+
+[자바스크립트 - 자료형]
+자료형 문법 : 데이터를 저장하는 방식
+  ㄴ 리스트 타입 - 배열 "[ ]"
+	ㄴ push - 배열에 추가하는 함수. push는 배열 뒤에다가 추가
+  ㄴ 딕셔너리 타입 - key:value
+	ㄴ aDict["sparta"] = "cording"; // aDict 는 {sprat: "cording"}
+
+
+[ㅈ바스크립트 - 불린 ]
+
+false, 0 , null, undefind = 같은 의미
+
+
+[자바스크립트 - 스플릿]
+soyean797@naver.com 에서 "naver" 를 빼오고 싶을때
+ ㄴ let email = "soyean7979@naver.com"
+ ㄴ email.split("@")[1].split(".")[0];
+
+return -> 함수의 반환값
+
+반복문 - for
+
+for(시작점, 끝점, 변환값){}
+
+let a = [0,1,2,3,4,5,6];
+for(let i = 0; i < a.length; i++){
+   b.push(a[i] + 1);
+}
+// b 를 출력시 : [1, 2, 3, 4, 5, 6, 7]
+
+이거를 짧게 쓰는 방법
+
+a.map((item) => item + 1);
+// 출력값 : [1, 2, 3, 4, 5, 6, 7]
+
+
+for (let i = 0 ; i < scores.length ; i++) {
+	if (scores[i]['score'] < 70) {
+		console.log(scores[i]['name']
+	}
+}
+
+이것을 짧게 쓰는 방법
+scores.filter((item) => item["scores"] >= 70 );
+
+자바스트립트 - > https://developer.mozilla.org/ko/
+
+제이쿼리 보다 더 많이 사용하는 프레임워크
+react -> facebook
+vue -> 중국 개인 개발자
+angular -> google
+
+
+
+
+
+
+	

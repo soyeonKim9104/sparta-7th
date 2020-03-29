@@ -1,0 +1,53 @@
+파이썬 응답 숫자 (response)
+200 : 정상 / 201 : 정상적으로 생성 / 400 : 일반적인 오류 / 401 : 인증오류 / 403 : forbidden / 404 : 없는 url
+500 : 서버 내부 오류
+
+from bs4 import BeatifulSoup
+
+from ... import  -> bs4라는 라이브러리에서 BeatifulSoup(class개념)을 가져와서 사용하겠다는 뜻 
+
+import : 라이브러리 전체를 끌고 오겠다는 뜻 
+
+headers : 크롤링을 우회해서 받아오는 작업
+
+select = list [] 빈값으로 나옴
+
+select_one = 배열에 첫번째 값을 가져오고싶을때
+ 
+mongo DB : 제대로 설치되었는지 확인법 : localhost:27017
+  ㄴ 하나의 데이터베이스 종류
+
+robo 3t : 데이터베이스인 mongo DB를 연결하는 프로그램
+처음 연결시 popup창 하나 뜰거임, > create 클릭 후 > name을 원하는 이름으로 적고 > address는 localhost 27017로
+한다음 save 누르고, connect 하면 연결완료!
+
+DB 두가지 종류
+RDBMS(SQL) : 엑셀과 유사함(column, row).  MySQL / Oracle / Postgregl
+ ㄴ 장점 : 안정성, 데이터의신뢰성이높음
+
+NO SQL : db에서 사용하는 언어 (Mongo DB - json 구조와 흡사 (key:value))
+
+Mongo DB  -  db : 책 보관소
+                - collection : 책
+
+CRUD
+c: create
+r: retreive (조회)
+u: update
+d: delete
+
+robo3t
+_id : 데이터의 유니크
+
+===============================================
+
+Flask 
+
+web server 란?
+
+클라이언트         서버
+브라우저    ----> 1.webs
+naver.com  < --- 2. html/css/js 을 렌더링
+	        api : json을 렌더링 할 수 있다.
+
+
