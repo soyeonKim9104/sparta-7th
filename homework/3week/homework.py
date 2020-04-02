@@ -2,7 +2,7 @@ import requests
 from bs4 import BeautifulSoup
 
 # lstrip : left 방향의 white space 제거
-# retrip : right 방향의 white space 제거
+# rtrip : right 방향의 white space 제거
 
 def genie_music():
     url = 'https://www.genie.co.kr/chart/top200?ditc=D&rtm=N&ymd=20200328'
