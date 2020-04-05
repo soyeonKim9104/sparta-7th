@@ -1,0 +1,13 @@
+html 파싱 > api 만들기 >
+
+post
+
+name = request.form.get('name', '') -> get이란 ? = name이라는 key를 읽어오는데 만약 key가 없으면 default로
+
+og태그 : url을 공유할떄 해당페이지의 제목,설명,이미지를 끌어온다. 
+자동으로 보여준다(ex:카카오톡 url 공유시 뜨는 이미지와 설명)
+
+
+개발 작업 순서
+
+설계 -> 개발 -> 테스터
