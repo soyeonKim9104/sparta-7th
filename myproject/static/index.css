@@ -1,0 +1,104 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Noto Sans KR', sans-serif;
+}
+
+li {
+    list-style: none;
+}
+
+a {
+    color: #000;
+    text-decoration: none;
+}
+
+caption {
+    overflow: hidden;
+    width: 0;
+    height: 0;
+    font-size: 0;
+    line-height: 0;
+}
+
+.wrap {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 30%;
+    margin: 5% auto;
+    background: #fff;
+    box-shadow: 0px 6px 9px rgba(0,0,0,0.05);
+}
+
+.header {
+    width: 100%;
+    background: rgb(3,201,165);
+    background: linear-gradient(298deg, rgba(3,201,165,1) 0%, rgba(69,9,253,1) 100%);
+    width: 100%;
+    position: relative;
+}
+
+h1 {
+    color: #fff;
+    font-weight: 400;
+    display: block;
+    position: relative;
+    width: 100%;
+    text-align: center;
+    padding: 2% 0;
+    border-bottom: 1px solid rgba(255,255,255,0.2);
+    font-size: 1.5em;
+}
+
+.header .city {
+    overflow: hidden;
+    width: 80%;
+    background: #fff;
+    margin: 10% auto;
+    padding: 5%;
+}
+
+.header .city li {
+    width: 50%;
+    float: left;
+    position: relative;
+}
+
+.header .city li a {
+    text-align: center;
+}
+
+.header .city li a .eng {
+    font-weight: 700;
+    font-size: 1.6em;
+}
+
+.header .city li a .kor {
+    font-size: 1em;
+}
+
+.header .city li:last-child {
+}
+
+.header .city li:last-child::before {
+    content: '\f072';
+    font-family: 'FontAwesome';
+    display: block;
+    position: absolute;
+    top: 50%;
+    left: -17px;
+    transform: translateY(-50%) rotate(45deg);
+    font-size: 2em;
+    color: #ddd;
+}
+
+.header .city li a[data-sel="select"] {
+    display: none;
+}
+
+.header .city li a[data-sel="base"] {
+    color: #ddd;
+}

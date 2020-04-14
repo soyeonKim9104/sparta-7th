@@ -5,6 +5,10 @@
     <meta name="viewport" content="width=<device-width>, initial-scale=1.0">
     <title>Document</title>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <!--<link rel="stylesheet" href="{{ url_for('static', filename='index.css') }}">-->
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="../static/index.css">
 </head>
 <body>
     <script>
@@ -15,7 +19,7 @@
         function show_airline(){
           $.ajax({
               type: 'GET',
-              url:  'http://openapi.airport.co.kr/service/rest/FlightStatusList/getFlightStatusList',
+              url:  '',
               data: {},
               success: function (response) {
                   console.log(response)
@@ -24,4 +28,388 @@
         }
     </script>
 </body>
+    <div class="wrap">
+        <div class="header">
+            <h1>항공권 예약</h1>
+            <ul class="city">
+                <li id="in">
+                    <a href="#" class="default">
+                        <div class="eng">ICN</div>
+                        <div class="kor">인천</div>
+                    </a>
+                </li>
+                <li id="out">
+                    <a href="#" data-sel="select">
+                        <div class="eng">ICN</div>
+                        <div class="kor">인천</div>
+                    </a>
+                    <a href="#" data-sel="base">
+                        <div class="eng">어디든</div>
+                        <div class="kor">도착지선택</div>
+                    </a>
+                </li>
+            </ul>
+            <div class="contents">
+                <div id="in-con">
+                    <div class="loca_list">
+                        <h2>주요도시 바로선택</h2>
+                        <table>
+                            <caption>주요도시 바로선택</caption>
+                            <colgroup>
+                                <col style="width:62px">
+                                <col style="width:127px">
+                                <col style="width:110px">
+                                <col style="width:85px">
+                            </colgroup>
+                            <tbody>
+                                <tr rowspan="4">
+                                    <th class="classification">국내</th>
+                                    <td><a href="#">서울(인천,김포)</a></td>
+                                    <td><a href="#">인천</a></td>
+                                    <td><a href="#">김포</a></td>
+                                </tr>
+                                <tr>
+                                    <td><a href="#">김해/부산</a></td>
+                                    <td><a href="#">대구</a></td>
+                                    <td><a href="#">청주</a></td>
+                                </tr>
+                                <tr>
+                                    <td><a href="#">제주</a></td>
+                                    <td><a href="#">무안</a></td>
+                                    <td><a href="#">울산</a></td>
+                                </tr>
+                                <tr>
+                                    <td><a href="#">광주</a></td>
+                                    <td><a href="#">여수</a></td>
+                                    <td><a href="#">군산</a></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <table>
+                            <caption>주요도시 바로선택</caption>
+                            <colgroup>
+                                <col style="width:62px">
+                                <col style="width:127px">
+                                <col style="width:110px">
+                                <col style="width:85px">
+                            </colgroup>
+                            <tbody>
+                                <tr rowspan="4">
+                                    <th class="classification">동남아</th>
+                                    <td><a href="#">다낭</a></td>
+                                    <td><a href="#">방콕</a></td>
+                                    <td><a href="#">홍콩</a></td>
+                                </tr>
+                                <tr>
+                                    <td><a href="#">타이베이</a></td>
+                                    <td><a href="#">호치민시</a></td>
+                                    <td><a href="#">마닐라</a></td>
+                                </tr>
+                                <tr>
+                                    <td><a href="#">세부</a></td>
+                                    <td><a href="#">하노이</a></td>
+                                    <td><a href="#">싱가포르</a></td>
+                                </tr>
+                                <tr>
+                                    <td><a href="#">코타키나발루</a></td>
+                                    <td><a href="#">나트랑</a></td>
+                                    <td><a href="#">쿠알라룸푸르</a></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <table>
+                            <caption>주요도시 바로선택</caption>
+                            <colgroup>
+                                <col style="width:62px">
+                                <col style="width:127px">
+                                <col style="width:110px">
+                                <col style="width:85px">
+                            </colgroup>
+                            <tbody>
+                                <tr rowspan="4">
+                                    <th class="classification">일본</th>
+                                    <td><a href="#">오사카</a></td>
+                                    <td><a href="#">도쿄(나리타)</a></td>
+                                    <td><a href="#">도쿄(하네다)</a></td>
+                                </tr>
+                                <tr>
+                                    <td><a href="#">후쿠오카</a></td>
+                                    <td><a href="#">오키나와</a></td>
+                                    <td><a href="#">삿포르</a></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <table>
+                            <caption>주요도시 바로선택</caption>
+                            <colgroup>
+                                <col style="width:62px">
+                                <col style="width:127px">
+                                <col style="width:110px">
+                                <col style="width:85px">
+                            </colgroup>
+                            <tbody>
+                                <tr rowspan="2">
+                                    <th class="classification">중국</th>
+                                    <td><a href="#">상하이</a></td>
+                                    <td><a href="#">청도</a></td>
+                                    <td><a href="#">광저우</a></td>
+                                </tr>
+                                <tr>
+                                    <td><a href="#">베이징</a></td>
+                                    <td><a href="#">연길</a></td>
+                                    <td><a href="#">심천</a></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <table>
+                            <caption>주요도시 바로선택</caption>
+                            <colgroup>
+                                <col style="width:62px">
+                                <col style="width:127px">
+                                <col style="width:110px">
+                                <col style="width:85px">
+                            </colgroup>
+                            <tbody>
+                                <tr rowspan="2">
+                                    <th class="classification">미주</th>
+                                    <td><a href="#">LA</a></td>
+                                    <td><a href="#">하와이</a></td>
+                                    <td><a href="#">뉴욕(NFK)</a></td>
+                                </tr>
+                                <tr>
+                                    <td><a href="#">벤쿠버</a></td>
+                                    <td><a href="#">샌프란시스코</a></td>
+                                    <td><a href="#">토론토</a></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <table>
+                            <caption>주요도시 바로선택</caption>
+                            <colgroup>
+                                <col style="width:62px">
+                                <col style="width:127px">
+                                <col style="width:110px">
+                                <col style="width:85px">
+                            </colgroup>
+                            <tbody>
+                                <tr rowspan="2">
+                                    <th class="classification">유럽</th>
+                                    <td><a href="#">파리</a></td>
+                                    <td><a href="#">런던</a></td>
+                                    <td><a href="#">블라디보스토크</a></td>
+                                </tr>
+                                <tr>
+                                    <td><a href="#">로마</a></td>
+                                    <td><a href="#">프라하</a></td>
+                                    <td><a href="#">바르셀로나</a></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <table>
+                            <caption>주요도시 바로선택</caption>
+                            <colgroup>
+                                <col style="width:62px">
+                                <col style="width:127px">
+                                <col style="width:110px">
+                                <col style="width:85px">
+                            </colgroup>
+                            <tbody>
+                                <tr rowspan="2">
+                                    <th class="classification">대양주</th>
+                                    <td><a href="#">괌</a></td>
+                                    <td><a href="#">사이판</a></td>
+                                    <td><a href="#">시드니</a></td>
+                                </tr>
+                                <tr>
+                                    <td><a href="#">오클랜드</a></td>
+                                    <td><a href="#">브리즈번</a></td>
+                                    <td><a href="#">멜버른</a></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div><!--e:in airline-->
+            
+                <div id="out-con">
+                    <div class="loca_list">
+                        <h2>주요도시 바로선택</h2>
+                        <table>
+                            <caption>주요도시 바로선택</caption>
+                            <colgroup>
+                                <col style="width:62px">
+                                <col style="width:127px">
+                                <col style="width:110px">
+                                <col style="width:85px">
+                            </colgroup>
+                            <tbody>
+                                <tr rowspan="4">
+                                    <th class="classification">국내</th>
+                                    <td><a href="#">서울(인천,김포)</a></td>
+                                    <td><a href="#">인천</a></td>
+                                    <td><a href="#">김포</a></td>
+                                </tr>
+                                <tr>
+                                    <td><a href="#">김해/부산</a></td>
+                                    <td><a href="#">대구</a></td>
+                                    <td><a href="#">청주</a></td>
+                                </tr>
+                                <tr>
+                                    <td><a href="#">제주</a></td>
+                                    <td><a href="#">무안</a></td>
+                                    <td><a href="#">울산</a></td>
+                                </tr>
+                                <tr>
+                                    <td><a href="#">광주</a></td>
+                                    <td><a href="#">여수</a></td>
+                                    <td><a href="#">군산</a></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <table>
+                            <caption>주요도시 바로선택</caption>
+                            <colgroup>
+                                <col style="width:62px">
+                                <col style="width:127px">
+                                <col style="width:110px">
+                                <col style="width:85px">
+                            </colgroup>
+                            <tbody>
+                                <tr rowspan="4">
+                                    <th class="classification">동남아</th>
+                                    <td><a href="#">다낭</a></td>
+                                    <td><a href="#">방콕</a></td>
+                                    <td><a href="#">홍콩</a></td>
+                                </tr>
+                                <tr>
+                                    <td><a href="#">타이베이</a></td>
+                                    <td><a href="#">호치민시</a></td>
+                                    <td><a href="#">마닐라</a></td>
+                                </tr>
+                                <tr>
+                                    <td><a href="#">세부</a></td>
+                                    <td><a href="#">하노이</a></td>
+                                    <td><a href="#">싱가포르</a></td>
+                                </tr>
+                                <tr>
+                                    <td><a href="#">코타키나발루</a></td>
+                                    <td><a href="#">나트랑</a></td>
+                                    <td><a href="#">쿠알라룸푸르</a></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <table>
+                            <caption>주요도시 바로선택</caption>
+                            <colgroup>
+                                <col style="width:62px">
+                                <col style="width:127px">
+                                <col style="width:110px">
+                                <col style="width:85px">
+                            </colgroup>
+                            <tbody>
+                                <tr rowspan="4">
+                                    <th class="classification">일본</th>
+                                    <td><a href="#">오사카</a></td>
+                                    <td><a href="#">도쿄(나리타)</a></td>
+                                    <td><a href="#">도쿄(하네다)</a></td>
+                                </tr>
+                                <tr>
+                                    <td><a href="#">후쿠오카</a></td>
+                                    <td><a href="#">오키나와</a></td>
+                                    <td><a href="#">삿포르</a></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <table>
+                            <caption>주요도시 바로선택</caption>
+                            <colgroup>
+                                <col style="width:62px">
+                                <col style="width:127px">
+                                <col style="width:110px">
+                                <col style="width:85px">
+                            </colgroup>
+                            <tbody>
+                                <tr rowspan="2">
+                                    <th class="classification">중국</th>
+                                    <td><a href="#">상하이</a></td>
+                                    <td><a href="#">청도</a></td>
+                                    <td><a href="#">광저우</a></td>
+                                </tr>
+                                <tr>
+                                    <td><a href="#">베이징</a></td>
+                                    <td><a href="#">연길</a></td>
+                                    <td><a href="#">심천</a></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <table>
+                            <caption>주요도시 바로선택</caption>
+                            <colgroup>
+                                <col style="width:62px">
+                                <col style="width:127px">
+                                <col style="width:110px">
+                                <col style="width:85px">
+                            </colgroup>
+                            <tbody>
+                                <tr rowspan="2">
+                                    <th class="classification">미주</th>
+                                    <td><a href="#">LA</a></td>
+                                    <td><a href="#">하와이</a></td>
+                                    <td><a href="#">뉴욕(NFK)</a></td>
+                                </tr>
+                                <tr>
+                                    <td><a href="#">벤쿠버</a></td>
+                                    <td><a href="#">샌프란시스코</a></td>
+                                    <td><a href="#">토론토</a></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <table>
+                            <caption>주요도시 바로선택</caption>
+                            <colgroup>
+                                <col style="width:62px">
+                                <col style="width:127px">
+                                <col style="width:110px">
+                                <col style="width:85px">
+                            </colgroup>
+                            <tbody>
+                                <tr rowspan="2">
+                                    <th class="classification">유럽</th>
+                                    <td><a href="#">파리</a></td>
+                                    <td><a href="#">런던</a></td>
+                                    <td><a href="#">블라디보스토크</a></td>
+                                </tr>
+                                <tr>
+                                    <td><a href="#">로마</a></td>
+                                    <td><a href="#">프라하</a></td>
+                                    <td><a href="#">바르셀로나</a></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <table>
+                            <caption>주요도시 바로선택</caption>
+                            <colgroup>
+                                <col style="width:62px">
+                                <col style="width:127px">
+                                <col style="width:110px">
+                                <col style="width:85px">
+                            </colgroup>
+                            <tbody>
+                                <tr rowspan="2">
+                                    <th class="classification">대양주</th>
+                                    <td><a href="#">괌</a></td>
+                                    <td><a href="#">사이판</a></td>
+                                    <td><a href="#">시드니</a></td>
+                                </tr>
+                                <tr>
+                                    <td><a href="#">오클랜드</a></td>
+                                    <td><a href="#">브리즈번</a></td>
+                                    <td><a href="#">멜버른</a></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div><!--e:out airline-->
+            </div>
+        </div>
+    </div>
 </html>
