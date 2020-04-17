@@ -14,7 +14,7 @@ a {
     text-decoration: none;
 }
 
-caption {
+caption, .close {
     overflow: hidden;
     width: 0;
     height: 0;
@@ -54,11 +54,38 @@ h1 {
 }
 
 .header .city {
-    overflow: hidden;
+    position: relative;
     width: 80%;
     background: #fff;
     margin: 10% auto;
     padding: 5%;
+    height: 110px;
+}
+
+.header .city::before {
+    content: '';
+    display: block;
+    position: absolute;
+    top: 50%;
+    left: -10px;
+    width: 20px;
+    height: 20px;
+    border-radius: 100%;
+    background: #4017f7;
+    transform: translateY(-50%);
+}
+
+.header .city::after {
+    content: '';
+    display: block;
+    position: absolute;
+    top: 50%;
+    right: -10px;
+    width: 20px;
+    height: 20px;
+    border-radius: 100%;
+    background: #0bafb0;
+    transform: translateY(-50%);
 }
 
 .header .city li {
@@ -69,6 +96,8 @@ h1 {
 
 .header .city li a {
     text-align: center;
+    display: block;
+    cursor: pointer;
 }
 
 .header .city li a .eng {
@@ -78,9 +107,6 @@ h1 {
 
 .header .city li a .kor {
     font-size: 1em;
-}
-
-.header .city li:last-child {
 }
 
 .header .city li:last-child::before {
@@ -101,4 +127,82 @@ h1 {
 
 .header .city li a[data-sel="base"] {
     color: #ddd;
+}
+
+#in-con, #out-con {
+    display: none;
+}
+
+.contents .loca_list {
+    background: #fff;
+    width: 80%;
+    padding: 4%;
+    position: absolute;
+    margin: 0 auto;
+    top: 83%;
+    left: 10%;
+    border: 1px solid #eee;
+    box-shadow: 0px 6px 9px rgba(0,0,0,0.05);
+}
+
+.contents .loca_list h2 {
+    font-size: 14px;
+    margin-bottom: 6px;
+}
+
+.contents .loca_list table {
+    border: 1px solid #eee;
+    font-size: 0;
+}
+
+.contents .loca_list table + table {
+    border-top: none;
+}
+
+.contents .loca_list tbody tr th {
+    font-size: 12px;
+    background: #fafafa;
+}
+
+.contents .loca_list tbody tr td {
+    font-size: 12px;
+    padding: 3px 5px;
+}
+
+.contents .loca_list tbody tr td:hover {
+    background: #e6f4ff;
+}
+
+.contents .loca_list .close {
+    position: absolute;
+    overflow: visible;
+    width: 20px;
+    height: 20px;
+    top: 10px;
+    right: 10px;
+    text-align: center;
+}
+
+.contents .loca_list .close::before {
+    content: '';
+    display: block;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 16px;
+    height: 1px;
+    background: #000;
+    transform: translate(-50%, -50%) rotate(45deg);
+}
+
+.contents .loca_list .close::after {
+    content: '';
+    display: block;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 16px;
+    height: 1px;
+    background: #000;
+    transform: translate(-50%, -50%) rotate(-45deg);
 }
